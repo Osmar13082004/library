@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CETACH2 - Diversificado</title>
+  <style>
+    :root {
+      --yellow-bg: #ffa300;
+      --blue-header: #000135;
+      --blue-card-top: #63afe7;
+      --text-dark: #0b0b0b;
+      --white: #ffffff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      --radius: 14px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--yellow-bg);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    header {
+      width: 100%;
+      background: var(--blue-header);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      margin: 8px 0 20px;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .btn {
+      background: var(--blue-card-top);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #001a8f;
+      transform: scale(1.05);
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      justify-items: center;
+    }
+
+    a.card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+      text-decoration: none;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    a.card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .card-header {
+      background: var(--blue-card-top);
+      color: var(--white);
+      text-align: center;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--blue-header);
+      color: var(--white);
+      text-align: center;
+      font-size: 14px;
+      padding: 15px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CETACH2</h1>
+    <h2>Área Diversificado</h2>
+    <a href="index.html" class="btn">Volver al Inicio</a>
+  </header>
+
+  <main>
+    <h3>Carreras Disponibles</h3>
+
+    <div class="cards">
+      <a href="/carreras/administracion.html" class="card">
+        <div class="card-header">Administración</div>
+        <img src="/imagenes/administracion.jpg" alt="Administración">
+      </a>
+
+      <a href="/carreras/bach.html" class="card">
+        <div class="card-header">Bachillerato en Computación y Diseño</div>
+        <img src="/imagenes/diseño.jfif" alt="Bachillerato en Computación y Diseño">
+      </a>
+
+      <a href="/carreras/dibujo.html" class="card">
+        <div class="card-header">Dibujo Arquitectónico</div>
+        <img src="/imagenes/dibujo.webp" alt="Dibujo Arquitectónico">
+      </a>
+
+      <a href="/carreras/electricidad.html" class="card">
+        <div class="card-header">Electricidad</div>
+        <img src="/imagenes/electricidad.jfif" alt="Electricidad">
+      </a>
+
+      <a href="/carreras/eectronica.html" class="card">
+        <div class="card-header">Electrónica</div>
+        <img src="/imagenes/electronica.jfif" alt="Electrónica">
+      </a>
+
+      <a href="/carreras/fisioterapia.html" class="card">
+        <div class="card-header">Fisioterapia</div>
+        <img src="/imagenes/fisioterapia.jfif" alt="Fisioterapia">
+      </a>
+
+      <a href="/carreras/gastronomia.html" class="card">
+        <div class="card-header">Gastronomía</div>
+        <img src="/imagenes/gastronomia.webp" alt="Gastronomía">
+      </a>
+
+      <a href="/carreras/informatica.html" class="card">
+        <div class="card-header">Informática</div>
+        <img src="/imagenes/informatica.jpg" alt="Informática">
+      </a>
+
+      <a href="/carreras/magisterio.html" class="card">
+        <div class="card-header">Magisterio</div>
+        <img src="/imagenes/magisterio.jpg" alt="Magisterio">
+      </a>
+
+      <a href="/carreras/medicina.html" class="card">
+        <div class="card-header">Medicina</div>
+        <img src="/imagenes/medicina.jfif" alt="Medicina">
+      </a>
+
+      <a href="/carreras/mecanica.html" class="card">
+        <div class="card-header">Mecánica</div>
+        <img src="/imagenes/mecanica.jfif" alt="Mecánica">
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 CETACH2 — Área Diversificado
+  </footer>
+
+</body>
+</html>

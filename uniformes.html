@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CETACH2 - Documentos</title>
+
+  <style>
+    :root {
+      --yellow-bg: #ffa300;
+      --blue-header: #000135;
+      --blue-card-top: #63afe7;
+      --text-dark: #0b0b0b;
+      --white: #ffffff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      --radius: 14px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--yellow-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 70px;
+    }
+
+    header {
+      width: 100%;
+      background: var(--blue-header);
+      color: var(--white);
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .btn-back {
+      background: var(--blue-card-top);
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      margin-top: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      background: #001a8f;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1300px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    /* grid para colocar las páginas horizontalmente */
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 20px;
+    }
+
+    .pdf-card {
+      width: 100%;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .pdf-header {
+      background: var(--blue-card-top);
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    footer {
+      background: var(--blue-header);
+      color: white;
+      width: 100%;
+      padding: 15px 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>CETACH2</h1>
+  <h2>Vista de Documentos</h2>
+
+  <a href="index.html" class="btn-back">Volver al inicio</a>
+</header>
+
+<main>
+  <h3>Documento — Vista por Páginas</h3>
+
+  <div class="pdf-grid">
+
+    <!-- Página 1 -->
+    <div class="pdf-card">
+      <div class="pdf-header">Página 1</div>
+      <iframe src="pdfs/CODIGO DE UNIFORMES CETACH 2 , JR SCHOOL Y TRAJES DE PRACTICA.pdf#page=1"></iframe>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 CETACH2 — Todos los derechos reservados
+</footer>
+
+</body>
+</html>

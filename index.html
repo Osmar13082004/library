@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CETACH2 - Cronograma</title>
+  <style>
+    :root {
+      --yellow-bg: #ffa300;
+      --blue-header: #000135;
+      --blue-card-top: #63afe7;
+      --text-dark: #0b0b0b;
+      --white: #ffffff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      --radius: 14px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--yellow-bg);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 70px; /* deja espacio para el footer fijo */
+    }
+
+    header {
+      width: 100%;
+      background: var(--blue-header);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      margin: 8px 0 20px;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .btn {
+      background: var(--blue-card-top);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #001a8f;
+      transform: scale(1.05);
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      justify-items: center;
+    }
+
+    .card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .card-header {
+      background: var(--blue-card-top);
+      color: var(--white);
+      text-align: center;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--blue-header);
+      color: var(--white);
+      text-align: center;
+      font-size: 14px;
+      padding: 15px 10px;
+      z-index: 10;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CETACH2</h1>
+  </header>
+
+  <main>
+    <h3>Niveles</h3>
+
+    <div class="cards">
+      <a href="/diversificado.html"  class="card">
+        <div class="card-header">Diversificado</div>
+        <img src="/imagenes/diversificado.jpg" alt="Oración">
+      </a>
+
+      <a href="/basicos/basicos.html"  class="card">
+        <div class="card-header">Basicos</div>
+        <img src="/imagenes/basicos.jpg" alt="Bienvenida">
+      </a>
+
+      <a href="/primaria/primariaCompleta.html"  class="card">
+        <div class="card-header">Jr School</div>
+        <img src="/imagenes/jrschool.jpg" alt="Himno Nacional">
+      </a>
+
+      <a href="/uniformes.html"  class="card">
+        <div class="card-header">Uniformes</div>
+        <img src="/imagenes/uniforme.avif" alt="Himno Nacional">
+      </a>
+
+      <a href="/utiles.html"  class="card">
+        <div class="card-header">Utiles escolares</div>
+        <img src="/imagenes/utiles.jpg" alt="Himno Nacional">
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 CETACH2 — Todos los derechos reservados
+  </footer>
+
+</body>
+</html>

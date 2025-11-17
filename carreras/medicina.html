@@ -119,8 +119,8 @@
 
     .tarjeta img {
       width: 100%;
-      height: 388px;
-      object-fit: none;
+      height: 200px;
+      object-fit: cover;
     }
 
     .descarga {
@@ -162,6 +162,60 @@
       bottom: 0;
       width: 100%;
     }
+     /* Carrusel simple */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+    
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .contenedor-grados {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .tarjeta-grado {
+      width: 340px;
+    }
+
+
   </style>
 </head>
 <body>
@@ -172,32 +226,74 @@
   </header>
 
   <main>
-    <section class="seccion">
+    <main>
+
+  <div class="contenedor-grados">
+
+    <!-- CUARTO -->
+    <section class="seccion tarjeta-grado">
       <h3 class="titulo-grado">Cuarto Diversificado</h3>
       <div class="fila">
         <div class="tarjeta">
-          <img src="../img/libros.jpg" alt="Libros">
-          <h3>Libros</h3>
+          <h3 id="texto-carLibros" class="titulo-dinamico">Libros </h3>
+          <div class="carousel" id="carLibros" data-nombres='["Libros", "Uniforme"]'>
+            <img src="../imagenes/administracion.jpg" class="active">
+            <img src="../imagenes/basicos.jpg">
+            <button class="carousel-btn prev" onclick="moveSlide('carLibros', -1)">‹</button>
+            <button class="carousel-btn next" onclick="moveSlide('carLibros', 1)">›</button>
+          </div>
+          <h4>Lista de utiles</h4><a href="" class="btn">Descargar PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUINTO -->
+    <section class="seccion tarjeta-grado">
+      <h3 class="titulo-grado">Quinto diversificado</h3>
+      <div class="fila">
+        <div class="tarjeta">
+          <h3 id="texto-carLibros" class="titulo-dinamico">Libros </h3>
+          <div class="carousel" id="carLibros" data-nombres='["Libros", "Uniforme"]'>
+            <img src="../imagenes/administracion.jpg" class="active">
+            <img src="../imagenes/basicos.jpg">
+            <button class="carousel-btn prev" onclick="moveSlide('carLibros', -1)">‹</button>
+            <button class="carousel-btn next" onclick="moveSlide('carLibros', 1)">›</button>
+          </div>
+          
+          <h4>Lista de utiles</h4><a href="" class="btn">Descargar PDF</a>
         </div>
         
       </div>
     </section>
 
-    <section class="seccion">
-      <h3 class="titulo-grado">Quinto Diversificado</h3>
-      <div class="fila">
-        <div class="tarjeta">
-          <img src="../img/libros.jpg" alt="Libros">
-          <h3>Libros</h3>
-        </div>
 
-      </div>
-    </section>
+  </div>
+
+</main>
 
   </main>
 
   <footer>
     <p>© 2025 CETACH2 | Todos los derechos reservados</p>
   </footer>
+  <script>
+  function moveSlide(id, direction) {
+    const carousel = document.getElementById(id);
+    const images = carousel.querySelectorAll("img");
+    const nombres = JSON.parse(carousel.getAttribute("data-nombres"));
+    const texto = document.getElementById("texto-" + id);
+
+    let index = [...images].findIndex(img => img.classList.contains("active"));
+    images[index].classList.remove("active");
+
+    index = (index + direction + images.length) % images.length;
+    images[index].classList.add("active");
+
+    // Cambiar texto dinámico
+    texto.textContent = nombres[index];
+  }
+</script>
+
+
 </body>
 </html>

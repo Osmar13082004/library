@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CETACH2 - Nivel Básico</title>
+
   <style>
     :root {
       --yellow-bg: #ffa300;
@@ -16,213 +17,212 @@
       font-family: "Poppins", Arial, sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: var(--yellow-bg);
-      color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      margin: 0;
       padding-bottom: 80px;
     }
 
     header {
-      width: 100%;
       background: var(--blue-header);
-      color: var(--white);
+      color: white;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 35px 20px;
       position: relative;
     }
 
-    header h1 {
-      font-size: 46px;
-      font-weight: 900;
-    }
-
-    header h2 {
-      margin-top: 8px;
-      font-size: 26px;
-      font-weight: 500;
-    }
-
-    .volver {
+    .btn-volver {
       position: absolute;
       top: 20px;
       left: 20px;
-    }
-
-    .btn-volver {
-      background: var(--white);
+      background: white;
       color: var(--blue-header);
-      text-decoration: none;
-      font-weight: 600;
       padding: 10px 18px;
       border-radius: 10px;
-      transition: 0.3s;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-volver:hover {
-      background: var(--blue-card-top);
-      color: var(--white);
-      transform: scale(1.05);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     main {
-      flex: 1;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .seccion {
-      width: 100%;
       max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    .titulo-grado {
-      text-align: left;
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--blue-header);
-      border-left: 8px solid var(--blue-card-top);
-      padding-left: 10px;
-    }
-
-    .fila {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .fila-horizontal {
+      display: flex;
+      justify-content: center;
       gap: 30px;
-      justify-items: center;
-      align-items: stretch;
+      flex-wrap: wrap;
     }
 
-    .tarjeta, .descarga {
+    .tarjeta {
+      width: 100%;
+      max-width: 350px;
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      text-align: center;
       transition: 0.3s;
-      width: 100%;
-      max-width: 320px;
+      padding-bottom: 15px;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.04);
+    }
+
+    .titulo-grado {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--blue-header);
       text-align: center;
     }
 
-    .tarjeta:hover, .descarga:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-.tarjeta img {
+    /* Carrusel */
+    .carousel {
+      position: relative;
       width: 100%;
-      height: 200px;
+      height: 220px;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 220px;
       object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
 
-    .descarga {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    .carousel img.active {
+      opacity: 1;
     }
 
-    .descarga h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .carousel-text {
+      font-size: 20px;
+      font-weight: 700;
       color: var(--blue-header);
+      margin-top: 12px;
     }
 
-    .btn {
+    .btn-descargar {
       background: var(--blue-card-top);
-      color: var(--white);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 10px;
-      transition: 0.3s;
+      margin-top: 10px;
       display: inline-block;
     }
 
-    .btn:hover {
-      background: #001a8f;
-      transform: scale(1.05);
-    }
-
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: var(--blue-header);
-      color: var(--white);
-      text-align: center;
-      font-size: 14px;
-      padding: 15px 10px;
-    }
-
-    @media (max-width: 900px) {
-      .fila {
-        grid-template-columns: 1fr;
-      }
-      .titulo-grado {
-        text-align: center;
-      }
-      .volver {
-        position: static;
-        margin-bottom: 15px;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="volver">
-      <a href="../index.html" class="btn-volver">← Volver al inicio</a>
-    </div>
-    <h1>CETACH2</h1>
-    <h2>Nivel Básico</h2>
-  </header>
+<header>
+  <a href="../index.html" class="btn-volver">← Volver</a>
+  <h1>CETACH2</h1>
+  <h2>Nivel Básico</h2>
+</header>
 
-  <main>
-    <!-- Primero Básico -->
-    <div class="seccion">
+<main>
+
+  <div class="fila-horizontal">
+
+    <!-- PRIMERO BÁSICO -->
+    <div class="tarjeta">
       <div class="titulo-grado">Primero Básico</div>
-      <div class="fila">
-        <div class="tarjeta"><img src="../imagenes/primerobasico.png" alt="Libros Primero Básico" ></div>
 
+      <div class="carousel" id="car1">
+        <img src="../imagenes/primerobasico_libros.png" class="active" data-text="Libros">
+        <img src="../imagenes/primerobasico_uniformes.png" data-text="Uniformes">
+
+        <button class="carousel-btn prev" onclick="moveSlide('car1', -1)">‹</button>
+        <button class="carousel-btn next" onclick="moveSlide('car1', 1)">›</button>
       </div>
+
+      <div class="carousel-text" id="text-car1">Libros</div>
+
+      <!-- Botón FIJO -->
+      <a class="btn-descargar" href="../pdf/utiles_primero.pdf" download>Descargar Útiles</a>
     </div>
 
-    <!-- Segundo Básico -->
-    <div class="seccion">
+    <!-- SEGUNDO BÁSICO -->
+    <div class="tarjeta">
       <div class="titulo-grado">Segundo Básico</div>
-      <div class="fila">
-        <div class="tarjeta"><img src="../imagenes/segundobasico.png" alt="Libros Segundo Básico"></div>
 
+      <div class="carousel" id="car2">
+        <img src="../imagenes/segundobasico_libros.png" class="active" data-text="Libros">
+        <img src="../imagenes/segundobasico_uniformes.png" data-text="Uniformes">
+
+        <button class="carousel-btn prev" onclick="moveSlide('car2', -1)">‹</button>
+        <button class="carousel-btn next" onclick="moveSlide('car2', 1)">›</button>
       </div>
+
+      <div class="carousel-text" id="text-car2">Libros</div>
+
+      <!-- Botón FIJO -->
+      <a class="btn-descargar" href="../pdf/utiles_segundo.pdf" download>Descargar Útiles</a>
     </div>
 
-    <!-- Tercero Básico -->
-    <div class="seccion">
+    <!-- TERCERO BÁSICO -->
+    <div class="tarjeta">
       <div class="titulo-grado">Tercero Básico</div>
-      <div class="fila">
-        <div class="tarjeta"><img src="../imagenes/tercerobasico.png" alt="Libros Tercero Básico"></div>
 
+      <div class="carousel" id="car3">
+        <img src="../imagenes/tercerobasico_libros.png" class="active" data-text="Libros">
+        <img src="../imagenes/tercerobasico_uniformes.png" data-text="Uniformes">
+
+        <button class="carousel-btn prev" onclick="moveSlide('car3', -1)">‹</button>
+        <button class="carousel-btn next" onclick="moveSlide('car3', 1)">›</button>
       </div>
-    </div>
-  </main>
 
-  <footer>
-    © 2025 CETACH2 — Nivel Básico
-  </footer>
+      <div class="carousel-text" id="text-car3">Libros</div>
+
+      <!-- Botón FIJO -->
+      <a class="btn-descargar" href="../pdf/utiles_tercero.pdf" download>Descargar Útiles</a>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function moveSlide(id, direction) {
+  const carousel = document.getElementById(id);
+  const imgs = carousel.querySelectorAll("img");
+  const txt = document.getElementById("text-" + id);
+
+  let index = [...imgs].findIndex(i => i.classList.contains("active"));
+  imgs[index].classList.remove("active");
+
+  index = (index + direction + imgs.length) % imgs.length;
+  imgs[index].classList.add("active");
+
+  txt.textContent = imgs[index].dataset.text;
+}
+</script>
 
 </body>
 </html>

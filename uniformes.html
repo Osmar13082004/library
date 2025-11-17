@@ -1,159 +1,218 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CETACH2 - Documentos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CETACH2 - Armado de Uniforme</title>
 
-  <style>
+<style>
     :root {
-      --yellow-bg: #ffa300;
-      --blue-header: #000135;
-      --blue-card-top: #63afe7;
-      --text-dark: #0b0b0b;
-      --white: #ffffff;
-      --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-      --radius: 14px;
-      font-family: "Poppins", Arial, sans-serif;
+        --yellow-bg: #ffa300;
+        --blue-header: #000135;
+        --blue-card-top: #63afe7;
+        --white: #fff;
+        --text: #0b0b0b;
+        --radius: 12px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-      background: var(--yellow-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding-bottom: 70px;
+        background: var(--yellow-bg);
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding-bottom: 80px;
     }
 
     header {
-      width: 100%;
-      background: var(--blue-header);
-      color: var(--white);
-      padding: 35px 20px;
-      text-align: center;
+        background: var(--blue-header);
+        color: white;
+        text-align: center;
+        padding: 30px 10px;
     }
 
     header h1 {
-      font-size: 48px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    header h2 {
-      font-size: 24px;
-      font-weight: 400;
-    }
-
-    .btn-back {
-      background: var(--blue-card-top);
-      color: white;
-      text-decoration: none;
-      padding: 12px 22px;
-      margin-top: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn-back:hover {
-      transform: scale(1.05);
-      background: #001a8f;
+        margin: 0;
+        font-size: 42px;
+        font-weight: 900;
     }
 
     main {
-      width: 100%;
-      max-width: 1300px;
-      padding: 40px 20px;
-      text-align: center;
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
     }
 
-    h3 {
-      font-size: 30px;
-      margin-bottom: 25px;
-      font-weight: 800;
+    h2 {
+        color: var(--blue-header);
+        font-size: 26px;
+        margin-top: 30px;
+        border-left: 8px solid var(--blue-card-top);
+        padding-left: 10px;
+        font-weight: 800;
     }
 
-    /* grid para colocar las páginas horizontalmente */
-    .pdf-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
-      justify-items: center;
-      margin-top: 20px;
+    select {
+        width: 100%;
+        padding: 12px;
+        border-radius: var(--radius);
+        border: none;
+        margin-top: 10px;
+        font-size: 16px;
     }
 
-    .pdf-card {
-      width: 100%;
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: 0.3s;
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: var(--radius);
+        margin-bottom: 25px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    .pdf-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    #resultado {
+        background: white;
+        padding: 20px;
+        border-radius: var(--radius);
+        margin-top: 40px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        font-size: 18px;
     }
 
-    .pdf-header {
+    .total {
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--blue-header);
+        margin-top: 15px;
+    }
+    .btn {
       background: var(--blue-card-top);
-      padding: 10px;
-      text-align: center;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: inline-block;
     }
+</style>
 
-    iframe {
-      width: 100%;
-      height: 450px;
-      border: none;
-    }
-
-    footer {
-      background: var(--blue-header);
-      color: white;
-      width: 100%;
-      padding: 15px 10px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-    }
-  </style>
 </head>
-
 <body>
 
 <header>
-  <h1>CETACH2</h1>
-  <h2>Vista de Documentos</h2>
-
-  <a href="index.html" class="btn-back">Volver al inicio</a>
+    <h1>CETACH2</h1>
+    <h3>Armado de Uniforme</h3>
+    <a href="index.html" class="btn">Volver al Inicio</a>
 </header>
 
 <main>
-  <h3>Documento — Vista por Páginas</h3>
 
-  <div class="pdf-grid">
-
-    <!-- Página 1 -->
-    <div class="pdf-card">
-      <div class="pdf-header">Página 1</div>
-      <iframe src="pdfs/CODIGO DE UNIFORMES CETACH 2 , JR SCHOOL Y TRAJES DE PRACTICA.pdf#page=1"></iframe>
+    <!-- CATEGORÍA -->
+    <div class="card">
+        <h2>Playeras Tipo Polo</h2>
+        <select id="polo">
+            <option value="0">Seleccionar</option>
+            <option value="130" data-name="Polo Azul XS (1007)">Polo Azul XS - Q130</option>
+            <option value="130" data-name="Polo Azul S (1131)">Polo Azul S - Q130</option>
+            <option value="130" data-name="Polo Azul M (1137)">Polo Azul M - Q130</option>
+            <option value="130" data-name="Polo Azul L (1132)">Polo Azul L - Q130</option>
+            <option value="130" data-name="Polo Azul XL (1138)">Polo Azul XL - Q130</option>
+            <option value="130" data-name="Polo Azul XXL (1719)">Polo Azul XXL - Q130</option>
+        </select>
     </div>
 
-  </div>
+    <div class="card">
+        <h2>Chumpas</h2>
+        <select id="chumpa">
+            <option value="0">Seleccionar</option>
+            <option value="230" data-name="Chumpa XS (1136)">Chumpa XS - Q230</option>
+            <option value="230" data-name="Chumpa S (1133)">Chumpa S - Q230</option>
+            <option value="230" data-name="Chumpa M (1134)">Chumpa M - Q230</option>
+            <option value="230" data-name="Chumpa L (1135)">Chumpa L - Q230</option>
+            <option value="230" data-name="Chumpa XL (1139)">Chumpa XL - Q230</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h2>Pantalones</h2>
+        <select id="pantalon">
+            <option value="0">Seleccionar</option>
+            <option value="225" data-name="Pantalón Lona (3004)">Pantalón Lona - Q225</option>
+            <option value="205" data-name="Pantalón Beige (1475)">Pantalón Beige - Q205</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h2>Sudaderos</h2>
+        <select id="sudadero">
+            <option value="0">Seleccionar</option>
+            <option value="215" data-name="Sudadero XS (1149)">Sudadero XS - Q215</option>
+            <option value="215" data-name="Sudadero S (1150)">Sudadero S - Q215</option>
+            <option value="215" data-name="Sudadero M (1151)">Sudadero M - Q215</option>
+            <option value="215" data-name="Sudadero L (1144)">Sudadero L - Q215</option>
+            <option value="215" data-name="Sudadero XL (1153)">Sudadero XL - Q215</option>
+        </select>
+    </div>
+
+    <div class="card">
+    <h2>Filipinas</h2>
+    <select id="filipina">
+        <option value="0">Seleccionar</option>
+
+        <!-- MEDICINA -->
+        <option value="315" data-name="Filipina Medicina XS (1478.1)">Medicina XS - Q315</option>
+        <option value="315" data-name="Filipina Medicina S (1478.2)">Medicina S - Q315</option>
+        <option value="315" data-name="Filipina Medicina M (1478.3)">Medicina M - Q315</option>
+        <option value="315" data-name="Filipina Medicina L (1478.4)">Medicina L - Q315</option>
+
+        <!-- FISIOTERAPIA -->
+        <option value="315" data-name="Filipina Fisioterapia XS (1480.1)">Fisioterapia XS - Q315</option>
+        <option value="315" data-name="Filipina Fisioterapia S (1480.2)">Fisioterapia S - Q315</option>
+        <option value="315" data-name="Filipina Fisioterapia M (1480.3)">Fisioterapia M - Q315</option>
+        <option value="315" data-name="Filipina Fisioterapia L (1480.4)">Fisioterapia L - Q315</option>
+
+        <!-- GASTRONOMÍA -->
+        <option value="375" data-name="Filipina Gastronomía XS (1477.1)">Gastronomía XS - Q375</option>
+        <option value="375" data-name="Filipina Gastronomía S (1477.2)">Gastronomía S - Q375</option>
+        <option value="375" data-name="Filipina Gastronomía M (1477.3)">Gastronomía M - Q375</option>
+        <option value="375" data-name="Filipina Gastronomía L (1477.4)">Gastronomía L - Q375</option>
+
+    </select>
+</div>
+
+
+    <!-- Resultado -->
+    <div id="resultado">
+        <h2>Uniforme Seleccionado</h2>
+        <div id="lista"></div>
+        <div class="total">Total: Q<span id="total">0.00</span></div>
+    </div>
+
 </main>
 
-<footer>
-  © 2025 CETACH2 — Todos los derechos reservados
-</footer>
+<script>
+function actualizar() {
+    const selects = ["polo","chumpa","pantalon","sudadero","filipina"];
+    let lista = "";
+    let total = 0;
+
+    selects.forEach(id => {
+        let sel = document.getElementById(id);
+        let price = Number(sel.value);
+        let name = sel.options[sel.selectedIndex].dataset.name;
+
+        if (price > 0) {
+            total += price;
+            lista += `<p>• ${name} — Q${price}</p>`;
+        }
+    });
+
+    document.getElementById("lista").innerHTML = lista || "<p>No ha seleccionado nada.</p>";
+    document.getElementById("total").innerText = total.toFixed(2);
+}
+
+document.querySelectorAll("select").forEach(sel => {
+    sel.addEventListener("change", actualizar);
+});
+</script>
 
 </body>
 </html>
